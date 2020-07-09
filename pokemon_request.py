@@ -5,23 +5,24 @@ import json
 #   This page has the first 151 pokemon
 #   Take some time to explore the website
 #   Think about how you can get the data
-people = requests.get("http://api.open-notify.org/astros.json")
-people_json = people.json()
-print("Number of people in space:",people_json['number'])
-for p in people_json['people']:
-    print(p['name'])
-    
+pokemon = requests.get("https://pokeapi.co/api/v2/pokemon?limit=151")
+
 # 2. Make your response readable
+pokemon_json = pokemon.json()
+
 
 # 3. Create an empty list that you will put your data into
 
 # 4. Loop through all of the 151 pokemon
+for p in pokemon_json['results']:
+    print(p['name'])
 
     # 5. Get the name of the pokemon
 
     # 6. Get the link to the additional info
 
     # 7. Make a GET request to the link
+
 
     # 8. Make your response readable
 
