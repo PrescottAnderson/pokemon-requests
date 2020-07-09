@@ -5,7 +5,12 @@ import json
 #   This page has the first 151 pokemon
 #   Take some time to explore the website
 #   Think about how you can get the data
-
+people = requests.get("http://api.open-notify.org/astros.json")
+people_json = people.json()
+print("Number of people in space:",people_json['number'])
+for p in people_json['people']:
+    print(p['name'])
+    
 # 2. Make your response readable
 
 # 3. Create an empty list that you will put your data into
